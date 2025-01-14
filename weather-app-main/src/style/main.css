@@ -1,0 +1,89 @@
+@import './utils/_typography.css';
+@import './utils/_layout.css';
+@import './utils/variables.css';
+@import './utils/_animation.css';
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: clamp(100px, 37.1429px + 19.6429vw, 320px);
+  height: clamp(100px, 37.1429px + 19.6429vw, 320px);
+}
+
+.morning{
+  background: var(--morning)
+}
+
+.dusk{
+  background: var(--dusk)
+}
+
+.dawn{
+  background: var(--dawn)
+}
+
+.night{
+  background: var(--night)
+}
+
+#container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100svh;
+}
+
+#content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap:24px;
+}
+
+#content__top{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+input, button{
+  border: none;
+  outline: none;
+  background: none;
+}
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  #content__top{
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #content{
+    gap: 36px;
+  }
+
+  #content__mid{
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+  }
+  
+}
+
+
+
