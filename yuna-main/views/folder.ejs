@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: `Yuna | ${folder.name}`,cssPath:'/styles/folder.css'})%>
+    <!---->
+    <%- include('navBar', {authenticated}) %>
+    <body>
+        <!---->
+        <div class="folderFileContainer">
+            <span class="breadcrumbs">
+                <% if (folder.parentFolderId) { %> <% if (authenticated) { %>
+                <a href="/folders/<%= folder.parentFolderId  %>"><%= folder.parentFolder.name %></a>
+                <%} else {%>
+                <a href="/folders/public/<%= folder.parentFolderId %>"><%= folder.parentFolder.name %></a>
+                <% } %>
+                <img src="/icons/next.svg" alt="" />
+                <%}%>
+                <!---->
+                <% if (authenticated) { %>
+                <a href="/folders/<%= folder.id %>"><%= folder.name %></a>
+                <%} else { %>
+                <a href="/folders/public/<%= folder.id %>"><%= folder.name %></a>
+                <%} %>
+            </span>
+            <!---->
+            <% if (authenticated) { %>
+            <div class="btn-div">
+                <button class="folder-btn">
+                    <img src="/icons/newFolder.svg" alt="" />
+                    <p>New Folder</p>
+                </button>
+                <button class="file-btn">
+                    <img src="/icons/newFile.svg" alt="" />
+                    <p>Upload File</p>
+                </button>
+                <button class="share-btn">
+                    <img src="/icons/share.svg" alt="" />
+                    <p>Share</p>
+                </button>
+            </div>
+            <%}%>
+            <h1><%= folder.name %></h1>
+            <% if (folder.subFolders.length === 0 && folder.files.length === 0){ %>
+            <p class="empty">Folder is empty</p>
+            <%} else { %>
+            <div class="folders">
+                <span>
+                    <p>Name</p>
+                    <p>Size</p>
+                    <p>Date</p>
+                </span>
+                <% folder.subFolders.forEach((folder, index) => {%>
+                <!---->
+                <%- include('partials/folderFileContainer', {link: authenticated ? `/folders/${folder.id}` : `/folders/public/${folder.id}`, name:
+                folder.name, date: folder.date, size: '-', btnClass: `folder-${index}`, id: folder.id, imgPath: '/icons/folder.svg'}) %>
+                <!---->
+                <% }) %>
+                <!---->
+                <% folder.files.forEach((file, index) => { %>
+                <!---->
+                <%- include('partials/folderFileContainer', {link: authenticated ? `/files/${file.id}` : `/files/public/${file.id}`, name: file.name,
+                size: file.size, date: file.date, btnClass: `file-${index}`, id: file.id, imgPath: '/icons/file.svg', parentFolderId:
+                folder.id,authenticated}) %>
+                <!---->
+                <% }) %>
+            </div>
+
+            <% }%>
+            <!---->
+        </div>
+    </body>
+    <!--DIALOGS-->
+    <%-include('partials/folderDialog', {id: folder.id}) %>
+    <!---->
+    <%- include('partials/fileDialog', {id: folder.id}) %>
+    <!---->
+    <%- include('partials/shareDialog', {id: folder.id}) %>
+    <script>
+        function checkSize(input) {
+            const UPLOAD_LIMIT = 50 * 1000000;
+            const file = input.files[0];
+
+            if (file.size > UPLOAD_LIMIT) {
+                alert("File can't be larger than 50MB");
+
+                input.value = null;
+            }
+        }
+        // Show delete / rename stuff when button is pressed
+        const folderFileDiv = document.querySelector(".folderFileContainer");
+        const folderBtn = document.querySelector(".folder-btn");
+        const fileBtn = document.querySelector(".file-btn");
+        const renameBtn = document.querySelectorAll(".rename-btn");
+        const deleteBtn = document.querySelectorAll(".delete-btn");
+        const shareBtn = document.querySelector(".share-btn");
+        const folderDialog = document.querySelector(".folder-dialog");
+        const fileDialog = document.querySelector(".file-dialog");
+        const renameDialog = document.querySelectorAll(".rename-dialog");
+        const deleteDialog = document.querySelectorAll(".delete-dialog");
+        const shareDialog = document.querySelector(".share-dialog");
+        const closeDialogBtn = document.querySelectorAll(".close-dialog-btn");
+
+        folderFileDiv.addEventListener("click", e => {
+            const [isModifyBtn, divIndex] = e.target.classList;
+
+            if (isModifyBtn !== "modify-btn") return;
+
+            const modifyDiv = document.querySelector(`div.${divIndex}`);
+            const modifyDivs = document.querySelectorAll(".modify-div"); // only display one modify div at a time
+            const modifyDivDisplay = modifyDiv.style.display;
+
+            modifyDivs.forEach(div => {
+                div.style.display = "none";
+            });
+
+            modifyDiv.style.display = modifyDivDisplay === "none" ? "flex" : "none";
+        });
+
+        // Throws error for shared folders if not put inside if statement
+        if (folderBtn) {
+            folderBtn.addEventListener("click", () => folderDialog.showModal());
+            fileBtn.addEventListener("click", () => fileDialog.showModal());
+            shareBtn.addEventListener("click", () => shareDialog.showModal());
+            renameBtn.forEach(btn => {
+                const id = btn.classList[1];
+                const renameDialog = document.getElementsByClassName(`rename-dialog ${id}`)[0];
+
+                btn.addEventListener("click", () => renameDialog.showModal());
+            });
+            deleteBtn.forEach(btn => {
+                const id = btn.classList[1];
+                const deleteDialog = document.getElementsByClassName(`delete-dialog ${id}`)[0];
+
+                btn.addEventListener("click", () => deleteDialog.showModal());
+            });
+
+            closeDialogBtn.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    folderDialog.close();
+                    fileDialog.close();
+                    shareDialog.close();
+                    renameDialog.forEach(dialog => dialog.close());
+                    deleteDialog.forEach(dialog => dialog.close());
+                });
+            });
+        }
+    </script>
+</html>

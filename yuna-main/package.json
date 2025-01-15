@@ -1,0 +1,41 @@
+{
+    "name": "yuna",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon app.js",
+        "start": "node app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mastachiii/yuna.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mastachiii/yuna/issues"
+    },
+    "homepage": "https://github.com/mastachiii/yuna#readme",
+    "dependencies": {
+        "@prisma/client": "^6.1.0",
+        "@quixo3/prisma-session-store": "^3.1.13",
+        "@supabase/supabase-js": "^2.47.10",
+        "base64-arraybuffer": "^1.0.2",
+        "bcryptjs": "^2.4.3",
+        "date-fns": "^4.1.0",
+        "dotenv": "^16.4.7",
+        "ejs": "^3.1.10",
+        "express": "^4.21.2",
+        "express-session": "^1.18.1",
+        "express-validator": "^7.2.1",
+        "multer": "^1.4.5-lts.1",
+        "nodemon": "^3.1.9",
+        "passport": "^0.7.0",
+        "passport-local": "^1.0.0",
+        "prisma": "^6.1.0",
+        "uuid": "^11.0.4"
+    }
+}

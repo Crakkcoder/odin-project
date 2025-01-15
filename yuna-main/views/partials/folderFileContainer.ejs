@@ -1,0 +1,14 @@
+<div style="display: flex">
+    <a href="<%= link %>"
+        ><img src="<%= imgPath %>" alt="" />
+        <%= name %>
+    </a>
+    <p><% if (size) { %> <%= size %> <%} else {%> <%= 'X' %> <%}%></p>
+    <span>
+        <p><%= date %></p>
+        <div>
+            <button class="modify-btn <%= locals.btnClass %>"></button>
+            <%-include('fileFolderModify', {linkDelete: `${link}/delete`, linkRename: `${link}/rename`, id, divClass: btnClass})%>
+        </div>
+    </span>
+</div>
