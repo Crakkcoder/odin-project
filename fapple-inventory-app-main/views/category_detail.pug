@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+  h1 Category: #{category.title} 
+
+  p #{category.description}
+
+  img(class='category-detail-image', src=category.image, alt=`${category.title} box cover`)
+
+  div(style='margin-left:20px;margin-top:20px')
+    h4 Items: 
+    if category_items.length 
+      dl  
+        each item in category_items 
+          dt 
+            a(href=item.url) #{item.title} 
+            img(class="category-detail-item-image" src=item.image, alt=`${item.title} box cover`)
+          dd(style='font-size:smaller;max-width:50%;') #{item.description}
+    
+    else 
+      p This category has no Items.
+
+  hr
+  p(style='margin-bottom: 50px;') 
+    a.btn.btn-warning(href=category.url+'/update') Update Category 
+    a.btn.btn-danger(style='margin-left:20px;' href=category.url+'/delete') Delete Category 
