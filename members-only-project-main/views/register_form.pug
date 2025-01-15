@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  div.register-container 
+    div.register-box  
+      h1=title 
+      form(class="register-form" method="post" action="register")  
+        input(class="register-input" type="text" name="firstName" id="firstName" placeholder="First Name" required value=(undefined===newUser ? '' : newUser.firstName))
+        input(class="register-input" type="text" name="lastName" id="lastName" placeholder="Last Name" required value=(undefined===newUser ? '' : newUser.lastName))
+        input(class="register-input" type="text" name="username" id="username" placeholder="Username" required)
+        if usernameError 
+          div.username-warning
+            | The username 
+            span.text-danger #{newUser.username}
+            |  is already taken. Please choose a new one.
+        input(class="register-input" type="password" name="password" id="password" placeholder="Password" required)
+        br
+        input(class="register-submit-btn" type="submit" value="➯")
+
+    br
+    if errors 
+      ul 
+        for error in errors 
+          li!= error.msg 

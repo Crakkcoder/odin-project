@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  div.dashboard-container
+    div.dashboard-heading-container
+      h1.dashboard-header #{userDetails.username}'s #{title}
+      p.dashboard-heading-info Welcome to your dashboard #{userDetails.username}, You are now logged in as a #{userDetails.member ? 'VIP member' : 'standard member'}.
+    div.dashboard-message-container
+      if userDetails.member
+        span.dashboard-message-box-info 
+        a(href=`/catalog/user/dashboard/new_message/${userDetails.username}` class="dashboard-new-message-link" )
+          div.dashboard-new-message-icon 
+          span.text-decoration Create a new message
+      // Conditional rendering of the "become a VIP member" link
+      if !userDetails.member
+        span.dashboard-message-box-info Only VIP members can create a new message post
+        a(class="dashboard-vip-btn" href=`/catalog/user/dashboard/register_vip/${userDetails.username}` class="dashboard-vip-link") Become a VIP member
+      div.dashboard-message-box
+        if allMessages.length 
+            each message in allMessages
+              div.dashboard-message
+                span.dashboard-message-title #{message.title} 
+                span.dashboard-message-text #{message.text}
+                if userDetails.member
+                  div.dashboard-message-details
+                    span.dashboard-message-author #{message.user.username}
+                    span.dashboard-message-date #{message.timestampFormatted}
+                    if userDetails.admin
+                      form(class="dashboard-message-delete-form" action=`/catalog/user/dashboard/delete_msg/${message._id}`, method="POST")
+                        button(class="dashboard-message-delete-btn" type="submit" class="dashboard-message-delete-btn") 
+                          img(class="delete-icon" src="/images/delete.png", alt="Delete")
+
+

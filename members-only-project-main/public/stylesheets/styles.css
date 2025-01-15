@@ -1,0 +1,577 @@
+
+@font-face {
+    font-family: 'navbar-font';
+    src: url('../fonts/Questrial-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'box-font';
+    src: url('../fonts/LexendDeca-VariableFont_wght.ttf');
+}
+
+/* LAYOUT */
+
+
+.col-sm-12 {
+    padding: 0;
+}
+
+/* NAVBAR */
+
+/* Custom CSS for Navbar */
+.navbar {
+    background-color: #fff; 
+    color: #333;
+    transition:  0.4s ease-in-out;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color:#818181;
+}
+
+.navbar-scrolled .navbar-nav .nav-link {
+    color:#fff;
+}
+
+.navbar-scrolled .navbar-toggler .navbar-toggler-icon {
+    color: #fff;
+}
+
+.navbar-brand {
+    font-weight:900;
+    font-size: 24px;
+    color: #333;
+    font-family: 'navbar-font';
+}
+
+.navbar-brand:hover {
+    color: #ccc;
+}
+
+.navbar-nav .nav-link {
+    transition: color 0.3s ease;
+    font-family: 'navbar-font';
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ccc; 
+}
+
+.navbar-scrolled {
+    background-color: #333333;
+}
+
+.navbar-scrolled .navbar-brand {
+    color: #fff;
+}
+
+
+
+
+/* INDEX */
+
+.index-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.index-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10rem;
+    width: 40%;
+}
+
+.index-heading {
+    font-size: 60px;
+    font-family: 'navbar-font';
+}
+
+.index-intro {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 4rem;
+    font-family: 'navbar-font';
+}
+
+.index-info {
+    text-align: center;
+    font-size: 18px;
+    font-family: 'navbar-font';
+}
+
+.index-btn-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.index-btn {
+    border-radius: 7px;
+    height: 3rem;
+    width: 10rem;
+    color: #333;
+    border-color: #333;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+    border: 2px solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'navbar-font';
+}
+
+.index-btn:hover {
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+}
+
+/* LOGIN */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-bottom: 10rem;
+    font-family: 'box-font';
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-input {
+    margin-top: 1rem;
+    border-radius: 7px;
+}
+
+.login-submit-btn {
+    border-radius: 7px;
+    width: 4rem;
+    color: #333;
+    border-color: #333;
+    cursor: pointer; 
+    transition: background-color 0.7s ease; 
+}
+
+.login-submit-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* LOGIN FAILURE */ 
+
+.login-failure-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'navbar-font';
+}
+
+.login-failure-heading-container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box.fail-box {
+    margin-top: 2rem;
+}
+
+/* REGISTER */
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.register-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-bottom: 10rem;
+    font-family: 'box-font';
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-input {
+    margin-top: 1rem;
+    border-radius: 7px;
+}
+
+.register-submit-btn {
+    border-radius: 7px;
+    width: 5rem;
+    color: #333;
+    border-color: #333;
+    cursor: pointer; 
+    transition: background-color 0.7s ease; 
+}
+
+.register-submit-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.username-warning {
+    font-size: 11px;
+    max-width: 11rem;
+    text-align: center;
+    margin-top: 2px;
+    color: #333;
+}
+
+/* DASHBOARD */
+
+/* Main container for the dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f5f5f5; /* Light gray background */
+    min-height: 100vh;
+}
+
+.dashboard-header {
+    font-family: 'box-font';
+}
+
+.dashboard-heading-info {
+    font-size: 24px;
+    font-family: 'navbar-font';
+}
+
+/* Container for the heading and welcome message */
+.dashboard-heading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333; /* Dark text color */
+    padding: 2rem;
+}
+
+/* Container for the message area */
+.dashboard-message-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    width: 70%;
+    color: #333;
+    background-color: #fff; /* White background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+    margin-bottom: 4rem;
+}
+
+.dashboard-message-box-info {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'navbar-font';
+}
+
+.dashboard-vip-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #333; /* Dark text color */
+    border: 1px solid #333; /* Dark border */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    font-family: 'box-font';
+}
+
+.dashboard-vip-btn:hover {
+    color: #fff; 
+    background-color: #333; 
+    text-decoration: none;
+}
+
+/* Styling for the new message link */
+.dashboard-new-message-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #333; /* Dark text color */
+    border: 1px solid #333; /* Dark border */
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-family: 'box-font';
+}
+
+/* Hover state for the new message link */
+.dashboard-new-message-link:hover {
+    color: #fff; 
+    background-color: #333; 
+    text-decoration: none;
+}
+
+/* Icon inside the new message link */
+.dashboard-new-message-icon {
+    height: 16.67px; 
+    width: 25px; 
+    border: 1px solid; 
+    position: relative;
+}
+
+.dashboard-new-message-icon::before {
+    content: "";
+    position: absolute;
+    border-top: 10px solid #333; 
+    border-left: 12.5px solid transparent; 
+    border-right: 12.67px solid transparent; 
+}
+
+.dashboard-new-message-link:hover .dashboard-new-message-icon::before {
+    border-top-color: #fff;
+}
+/* Styling for the message boxes */
+.dashboard-message-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Styling for individual message items */
+.dashboard-message {
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 80%;
+    background-color: #fff; /* White background */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    color: #333; /* Dark text color */
+    display: flex;
+    flex-direction: column;
+    font-family: 'box-font';
+}
+
+
+/* Styling for message title */
+.dashboard-message-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #555; /* Dark gray text color */
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Styling for message text */
+.dashboard-message-text {
+    font-size: 16px;
+    color: #666; /* Medium gray text color */
+    text-align: center;
+}
+
+/* Styling for message details */
+.dashboard-message-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Styling for message author */
+.dashboard-message-author {
+    font-size: 14px;
+    color: #888; /* Light gray text color */
+}
+
+/* Styling for message date */
+.dashboard-message-date {
+    font-size: 12px;
+    color: #888; /* Light gray text color */
+}
+
+
+
+.dashboard-message-delete-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-message-delete-btn {
+    background-color:transparent;
+    border: none;
+}
+
+.delete-icon {
+    height: 20px;
+}
+
+/* VIP REGISTER */
+
+.vip-register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.vip-register-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin-bottom: 10rem;
+    font-family: 'box-font';
+}
+
+.vip-register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.vip-register-info {
+    margin-top: 2rem;
+}
+
+.vip-register-input {
+    margin: 1rem;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+
+.vip-return-link {
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+/* NEW MESSAGE POST */
+
+.new-message-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    min-height: fit-content;
+}
+
+.new-message-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    background-color: #fff;
+    color: #333;
+    border-radius: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    width: 40%;
+    font-family: 'box-font';
+}
+
+.new-message-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.new-message-title-input {
+    margin: 1rem;
+    height: 10%;
+    border-radius: 7px;
+    width: 90%;
+}
+
+.new-message-text-input {
+    margin-bottom: 1rem;
+    border: 2px solid;
+    border-radius: 7px;
+    width: 90%;
+    height: 200px;
+}
+
+.new-message-submit-btn {
+    margin-top: 2rem;
+    border-radius: 7px;
+    width: 6rem;
+    color: #333;
+    border-color: #333;
+    cursor: pointer; 
+    transition: background-color 0.7s ease; 
+}
+
+.new-message-submit-btn:hover{
+    background-color: #333;
+    color: #fff;
+}
