@@ -1,0 +1,283 @@
+:root {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-y: scroll;
+}
+
+[data-theme='light'] {
+  --color-background: white;
+  --color-near-background: #ddd;
+  --color-far-background: #bbb;
+  --color-foreground: black;
+  --color-near-foreground: #222;
+  --color-far-foreground: #444;
+}
+
+[data-theme='dark'] {
+  --color-background: black;
+  --color-near-background: #222;
+  --color-far-background: #444;
+  --color-foreground: white;
+  --color-near-foreground: #ddd;
+  --color-far-foreground: #bbb;
+}
+
+* {
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+body {
+  margin: 0;
+}
+
+.themeWrapper {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  min-height: 100vh;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 250px 600px 350px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+main {
+  border: 1px solid var(--color-near-background);
+  max-width: 600px;
+}
+
+.profileBar {
+  display: none;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+dialog {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-near-background);
+  border-radius: 10px;
+  padding: 30px;
+}
+
+dialog h2 {
+  margin-top: 0;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+a {
+  color: var(--color-foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-near-foreground);
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--color-far-foreground);
+  text-decoration: underline;
+}
+
+textarea {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  padding: 15px;
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.pfp {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.material-symbols-outlined,
+.gray {
+  color: gray;
+}
+
+::backdrop {
+  background-color: black;
+  opacity: 0.8;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+button {
+  background-color: var(--color-foreground);
+  color: var(--color-background);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--color-near-foreground);
+}
+
+button:active {
+  background-color: var(--color-far-foreground);
+}
+
+button:disabled {
+  cursor: default;
+  color: black;
+  background-color: gray;
+}
+
+.refreshButton {
+  width: 100%;
+  background-color: inherit;
+  color: #6161ff;
+  border: 1px solid var(--color-near-background);
+  border-radius: 0;
+}
+
+.categoryButtons {
+  border-bottom: 1px solid var(--color-near-background);
+}
+
+.categoryButton {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.refreshButton:hover,
+.categoryButton:hover,
+.openTab {
+  background-color: var(--color-near-background);
+}
+
+.refreshButton:active,
+.categoryButton:active {
+  background-color: var(--color-far-background);
+}
+
+.closeButton {
+  position: absolute;
+  padding: 2px;
+  border: 1px solid var(--color-background);
+  border-radius: 50%;
+  top: 5px;
+  right: 5px;
+  height: 30px;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.closeIcon {
+  color: var(--color-background);
+}
+
+.repostHeading {
+  color: gray;
+  margin: 15px 0 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: gray #0000;
+  animation: l16 1s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+
+.loader::before {
+  border-color: #6161ff #0000;
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+
+.loader::after {
+  margin: 8px;
+}
+
+@keyframes l16 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 1200px) {
+  .app {
+    max-width: 850px;
+  }
+}
+
+@media (max-width: 850px) {
+  .app {
+    grid-template-columns: max-content 1fr;
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    grid-template-columns: auto;
+    grid-template-rows: calc(100vh - 60px) 60px;
+  }
+
+  .main {
+    order: 1;
+    overflow: auto;
+  }
+
+  .profileBar {
+    display: block;
+  }
+}

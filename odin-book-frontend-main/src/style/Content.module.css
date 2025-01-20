@@ -1,0 +1,147 @@
+.content {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  align-items: start;
+  column-gap: 15px;
+}
+
+.feed,
+.focused,
+.repost {
+  grid-template-areas: 'pfp heading' 'mainContent mainContent' 'interact interact';
+  border: 1px solid var(--color-near-background);
+  border-top: none;
+  padding: 15px;
+}
+
+.ancestor {
+  grid-template-areas: 'pfp heading' 'line mainContent' 'line interact';
+  margin: 15px;
+}
+
+.reply {
+  grid-template-areas: 'pfp heading' 'pfp mainContent' 'interact interact';
+  border: 1px solid var(--color-near-background);
+  padding: 15px;
+}
+
+.focused .repostHeading {
+  margin: 15px 15px 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imageModal {
+  padding: 0;
+}
+
+.pfp {
+  grid-area: pfp;
+}
+
+.line {
+  grid-area: line;
+  border: 1px solid var(--color-far-background);
+  justify-self: center;
+  margin-top: 15px;
+  width: 0;
+  height: 100%;
+}
+
+.heading {
+  grid-area: heading;
+  display: flex;
+  justify-content: space-between;
+}
+
+.namesAndTimestamp {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+}
+
+.options {
+  display: flex;
+}
+
+.options button {
+  padding: 0;
+  margin: 5px;
+  height: 24px;
+}
+
+.options span {
+  background-color: var(--color-background);
+}
+
+.options button,
+.options button:hover,
+.options button:active {
+  background-color: black;
+}
+
+.mainContent {
+  grid-area: mainContent;
+}
+
+.replyLink {
+  color: #6161ff;
+}
+
+.text {
+  display: -webkit-box;
+  white-space: pre-wrap;
+}
+
+.focused .text {
+  display: block;
+}
+
+.editButtons button {
+  margin: 0 15px 15px 0;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin: 15px 0;
+}
+
+.interact {
+  grid-area: interact;
+  display: flex;
+  justify-content: space-around;
+}
+
+.interact button {
+  background-color: inherit;
+  color: gray;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  padding: 0;
+  height: 24px;
+}
+
+.interact button:hover,
+.interact button:active {
+  background-color: inherit;
+}
+
+.interact a:hover,
+.interact a:active {
+  text-decoration: none;
+}
+
+.interact .reposted {
+  font-variation-settings: 'wght' 700;
+  color: #008a00;
+}
+
+.interact .liked {
+  font-variation-settings: 'FILL' 1, 'wght' 700;
+  color: #d100d1;
+}

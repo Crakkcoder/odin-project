@@ -1,0 +1,89 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.sidebarButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebarButton {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  border-radius: 20px;
+  width: max-content;
+  gap: 20px;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sidebarButton:hover {
+  background-color: var(--color-near-background);
+}
+
+.sidebarButton:active {
+  background-color: var(--color-far-background);
+}
+
+.sidebarButton:hover,
+.sidebarButton:active {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .menuSvg {
+  font-size: 30px;
+  font-variation-settings: 'OPSZ' 30;
+  color: var(--color-foreground);
+}
+
+.notificationIcon {
+  position: relative;
+  height: 30px;
+}
+
+.notificationCount {
+  position: absolute;
+  left: 25px;
+  width: 22px;
+  color: #6161ff;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 850px) {
+  .sidebarLabel,
+  .themeLabel,
+  .names {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    order: 2;
+    border-top: 1px solid var(--color-near-background);
+    height: 60px;
+  }
+
+  .sidebarButtons {
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .profile,
+  .logOut,
+  .profileBar {
+    display: none;
+  }
+}

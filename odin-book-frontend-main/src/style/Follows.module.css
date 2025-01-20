@@ -1,0 +1,29 @@
+.heading {
+  padding-left: 20px;
+}
+
+.heading * {
+  margin: 5px;
+  text-align: start;
+}
+
+.heading p {
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.categoryButton {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.categoryButton:hover,
+.openTab {
+  background-color: var(--color-near-background);
+}
+
+.categoryButton:active {
+  background-color: var(--color-far-background);
+}

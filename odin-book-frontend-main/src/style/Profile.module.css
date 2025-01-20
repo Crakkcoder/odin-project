@@ -1,0 +1,119 @@
+.imageModal {
+  padding: 0;
+}
+
+.heading {
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading h2,
+.heading p {
+  margin: 5px;
+}
+
+.heading p {
+  color: gray;
+  font-size: 0.8rem;
+}
+
+.heading h2,
+.userInfo h2 {
+  text-align: start;
+}
+
+.switch {
+  height: 100%;
+  display: none;
+}
+
+.headerImage,
+.profilePagePfp {
+  cursor: pointer;
+}
+
+.headerImage {
+  display: block;
+  border-radius: 0;
+  width: 100%;
+  aspect-ratio: 3/1;
+  object-fit: cover;
+}
+
+.pfpAndButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+
+.profilePagePfp {
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.topButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 150px;
+}
+
+.userInfo {
+  margin: 15px;
+}
+
+.userInfo h2 {
+  margin: 5px 0;
+}
+
+.userDetails {
+  color: gray;
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.detail {
+  display: flex;
+  gap: 5px;
+}
+
+.websiteLink {
+  color: #6161ff;
+  text-decoration: underline;
+}
+
+.websiteLink:hover {
+  color: #6161ff;
+}
+
+.websiteLink:active {
+  color: #6161ff;
+}
+
+.profileIcon {
+  font-size: 16px;
+  font-variation-settings: 'OPSZ' 16;
+}
+
+.followStats {
+  display: flex;
+  gap: 20px;
+  color: gray;
+  width: max-content;
+}
+
+.followStats strong {
+  color: var(--color-foreground);
+}
+
+@media (max-width: 600px) {
+  .switch {
+    display: block;
+  }
+}

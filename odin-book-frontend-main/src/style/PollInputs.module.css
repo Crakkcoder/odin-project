@@ -1,0 +1,29 @@
+.pollChoices {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+  gap: 15px;
+  border-radius: 20px;
+  margin: 15px 0;
+}
+
+.pollChoices input {
+  background-color: inherit;
+  color: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid var(--color-near-background);;
+}
+
+.svgButton,
+.svgButton:hover,
+.svgButton:active {
+  background-color: inherit;
+  padding: 0;
+  border-radius: 0;
+  height: 24px;
+}
+
+.svgButton span {
+  color: #6161FF
+}
