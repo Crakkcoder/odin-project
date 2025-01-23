@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Sign-up Form</title>
+</head>
+<script>  
+  function confirm_password() {  
+    var pw1 = document.getElementById("password");  
+    var pw2 = document.getElementById("confirm_password");  
+    if(pw1 != pw2)  
+    {   
+      password1.setCustomValidity("Invalid field.");
+      password2.setCustomValidity("Invalid field.");
+    } else {  
+      password1.setCustomValidity("");
+      password2.setCustomValidity("");
+    }  
+  }  
+  </script>  
+<body>
+  <div id="logo-container">
+    <div class="space"></div>
+    <div id="logo-background">
+      <div id="logo">
+        <img src="./img/odin-lined.png" alt="Odin logo" width="100">
+        <span id="logo-text"> ODIN</span>
+      </div>
+    </div>
+    <span id="credit">Photo by <a href="https://unsplash.com/@haliewestphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Halie West</a> on <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+    </span>
+  </div>
+  <div id="form-container">
+    <div class="space2"></div>
+    <div id="call-to-action">
+      <h2>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. <br>Sign up <i>now</i> to get started.
+      </h2>
+      <h2>
+        You <i>know</i> you want to 
+      </h2>
+    </div>
+    <div id="form">
+      <h2 id="form-legend">Let's do this</h2>
+      <form action="example.com/path" method="post">
+        <div class="input-pair">
+          <div class="input">
+            <div class="label">
+              <label for="first_name">FIRST NAME</label>
+            </div>
+            <input type="text" id="first_name">
+          </div>
+          <div class="input">
+            <div class="label">
+              <label for="last_name">LAST NAME</label>
+            </div>
+            <input type="text" id="last_name">
+          </div>
+        </div>
+        <div class="input-pair">
+          <div class="input">
+            <div class="label">
+              <label for="email">EMAIL</label>
+            </div>
+            <input type="email" id="email">
+          </div>
+          <div class="input">
+            <div class="label">
+              <label for="phone_number">PHONE NUMBER</label>
+            </div>
+            <input type="text" id="phone_number">
+          </div>
+        </div>
+        <div class="input-pair">
+          <div class="input">
+            <div class="label">
+              <label for="password">PASSWORD</label>
+            </div>
+            <input type="password" id="password" required onkeyup='confirm_password();'>
+          </div>
+          <div class="input">
+            <div class="label">
+              <label for="confirm_password">CONFIRM PASSWORD</label>
+            </div>
+            <input type="password" id="confirm_password" required onkeyup='confirm_password();'>
+          </div>
+        </div>
+      </form>
+    </div>
+    <button id="submit-btn" type="submit">Create Account</button>
+    <span id="footnote">Already have an account? <a href="https://www.reddit.com/r/learnprogramming/comments/16tabv3/is_the_odin_project_still_relevant_in_20232024/">Log in</a></span>
+  </div>
+</body>
+</html>
