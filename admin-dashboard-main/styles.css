@@ -1,0 +1,235 @@
+/* CSS Reset by Josh Comeau */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+*{
+    margin: 0;
+}
+  
+body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+  
+  /* 5. Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+  
+  /* 6. Inherit fonts for form controls */
+input, button, textarea, select {
+    font: inherit;
+}
+  
+  /* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+  
+  /* 8. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    font-size: 1rem;
+}
+  
+  /*
+    9. Create a root stacking context
+  */
+#root, #__next {
+    isolation: isolate;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+img {
+    height: 1em;
+    aspect-ratio: 1 /1;
+    object-fit: contain;
+}
+input[type="text"]
+{
+  border-radius: 15px;
+  height: 20px;
+  background-color: gainsboro;
+}
+#details
+{
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+#side-bar
+{
+  background-color: blue;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-left: 10px;
+}
+
+#sections > div, #dashboard, #support > div
+{
+  display: grid;
+  grid-template-columns: 2rem auto;
+}
+h1
+{
+  font-weight: bold;
+}
+#dashboard > img 
+{
+  height: 1.5rem
+}
+#sections, #dashboard, #support
+{
+  margin-top: 20px
+}
+#main
+{
+  padding-top: 10px;
+  background-color: gainsboro
+}
+#header > div
+{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  margin-left: 10px;
+}
+
+#top > div
+{
+  display: grid;  
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+.cat
+{
+  height: 1.5rem;
+  padding: 0.1rem;
+  background-color: yellow;
+  border-radius: 50%;
+}
+
+button
+{
+  border-radius: 15px;
+  background-color: blue;
+  color: white;
+  height: 2rem;
+  width: 5rem;
+}
+#bottom
+{
+  display: flex
+}
+#main
+{
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+p, h6
+{
+  font-size: 0.35rem;
+}
+
+#projects 
+{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 10px;
+}
+h6
+{
+  font-weight: bold;
+}
+#projects > div
+{
+  height: 8rem;
+  background-color: white;
+  border-left: 0.5rem solid yellow;
+  border-radius: 10px;
+  padding: 0.5rem
+}
+#projects > div > div
+{
+  display: flex;
+  align-items: end;
+  justify-content: end;
+} 
+h3 
+{
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 0.7rem;
+}
+#announcements, #trending
+{
+  background-color: white;
+  margin-right: 10px;
+  border-radius: 10px;
+  padding: 0.2rem
+}
+#trending > div, #profile
+{
+  display: grid;
+  grid-template: auto auto / auto auto auto;
+}
+#trending> div > img, #profile > img
+{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  height: 2rem;
+}
+#trending> div > p, #profile > h4
+{
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+
+#trending> div > h6, #profile > p
+{
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+#header p
+{
+  font-size: 0.5rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+#profile > img
+{
+  padding: 0.1rem;
+  background-color: yellow;
+  border-radius: 50%; 
+  margin-right: 0.5rem;
+}
+#profile > h6 
+{
+  font-size: 0.5rem;
+  font-weight: bold;
+}
